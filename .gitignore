@@ -1,0 +1,21 @@
+# Data
+data/images/
+data/raw/train.csv
+data/raw/test.csv
+
+# Models
+models/*.pkl
+models/*.joblib
+
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
