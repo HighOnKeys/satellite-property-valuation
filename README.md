@@ -168,8 +168,8 @@ flowchart LR
 │   │   ├── image_embeddings.npy
 │   │   └── image_ids.npy
 │   └── images/
-│       ├── train/
-│       └── test/
+│       ├── train/                #not pushed to GitHub
+│       └── test/                 #not pushed to GitHub
 │
 ├── notebooks/
 │   ├── 01_preprocessing_eda.ipynb
