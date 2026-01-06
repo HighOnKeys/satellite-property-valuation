@@ -181,6 +181,9 @@ flowchart LR
 │   ├── 06_gradcam.ipynb
 │   └── 07_inference.ipynb
 │
+├── scripts/
+│   └── data_fetcher.py
+│
 ├── models/
 │   └── xgb_multimodal.pkl
 │
