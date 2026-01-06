@@ -71,6 +71,29 @@ A pretrained **Convolutional Neural Network (CNN)** is used to extract visual fe
 
 ---
 
+## 📊 System Architecture
+
+```mermaid
+flowchart LR
+    A[Raw Tabular Data<br/>train.csv / test.csv]
+    B[Latitude & Longitude]
+    C[Mapbox Static Images API]
+    D[Satellite Images]
+    E[ResNet-18<br/>CNN Encoder]
+    F[512-D Image Embeddings]
+    G[Tabular Feature Processing]
+    H[Feature Concatenation]
+    I[XGBoost Regressor]
+    J[Predicted Property Price]
+
+    A --> G
+    B --> C --> D --> E --> F
+    G --> H
+    F --> H --> I --> J
+```
+
+---
+
 ## 🧠 Methodology
 
 ### 1. Exploratory Data Analysis (EDA)
@@ -166,9 +189,54 @@ A pretrained **Convolutional Neural Network (CNN)** is used to extract visual fe
 │   └── 23119016_report.pdf
 ├── .env.example
 ├── requirements.txt
+├── .gitignore
 └── README.md
+```
+---
 
-🔐 API Key Handling
+## 🔐 API Key Handling
 
-Satellite images are downloaded using the Mapbox Static Images API.
-To keep credentials secure, API keys are stored in a .env file.
+- Satellite images are downloaded using the Mapbox Static Images API.
+- To keep credentials secure, API keys are stored in a .env file.
+
+- Example .env:
+  - MAPBOX_API_KEY=your_api_key_here
+
+---
+
+## ⚙️ Tech Stack
+
+- **Data Processing:** Pandas, NumPy
+- **Visualization:** Matplotlib, Seaborn
+- **Deep Learning:** PyTorch, Torchvision
+- **Machine Learning:** Scikit-learn, XGBoost
+- **Image Processing:** PIL
+- **Explainability:** Grad-CAM
+
+---
+
+## 🚀 How to Run
+
+- Clone the repository
+- Install dependencies:
+  - pip install -r requirements.txt
+- Add your Mapbox API key to .env
+- Run notebooks sequentially:
+  - 01_preprocessing_eda → 07_inference
+
+---
+
+## 📌 Key Takeaways
+
+- Satellite imagery provides valuable **neighborhood-level context**
+- Multimodal learning enriches traditional valuation pipelines
+- Explainability is crucial when using unstructured visual data
+- The pipeline is **modular, reproducible, and extensible**
+
+---
+
+## 📜 License
+
+- This project is developed as part of CDC X Yhills Open Projects (2025–2026) and is intended for academic and learning purposes.
+
+---
